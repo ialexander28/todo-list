@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+
+
 
 @Component({
   selector: 'app-root',
@@ -30,6 +32,10 @@ export class AppComponent {
       description,
       done: false
     });
+  }
+
+  remove(item: { description: string; done: boolean; }) {
+    this.allItems.splice(this.allItems.indexOf(item), 1);
   }
   
 
